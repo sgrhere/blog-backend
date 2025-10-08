@@ -28,7 +28,8 @@ app.post("/blog",upload.single('image'), async (req,res)=>{
    const {title,subtitle,description} = req.body 
    let filename;
    if(req.file){
-     filename = "http://localhost:3000/" + req.file.filename 
+    //  filename = "http://localhost:3000/" + req.file.filename 
+     filename = "https://blog-backend-a888.onrender.com/" + req.file.filename 
    }else{
     filename = "https://cdn.mos.cms.futurecdn.net/i26qpaxZhVC28XRTJWafQS.jpeg"
    }
