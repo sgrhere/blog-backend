@@ -98,7 +98,8 @@ app.patch('/blog/:id',upload.single('image'), async(req,res)=>{
     const {title,subtitle,description} = req.body 
     let imageName;
     if(req.file){
-        imageName= "http://localhost:3000/" + req.file.filename
+        // imageName= "http://localhost:3000/" + req.file.filename
+        imageName= "https://blog-backend-a888.onrender.com/" + req.file.filename
         const blog = await Blog.findById(id)
         const oldImageName = blog.image
     
@@ -128,5 +129,3 @@ app.use(express.static('./storage'))
 app.listen(process.env.PORT,()=>{
     console.log("NodeJs project has started")
 })
-
-// mongodb+srv://digitalpathshala:<password>@cluster0.iibdr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
